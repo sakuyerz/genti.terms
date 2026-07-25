@@ -62,18 +62,19 @@ body {
   line-height: 1;
 }
 
-/* ロゴ画像（黒地に合わせて白のシルエットに変換） */
+/* ロゴ画像（黒地で見えるよう色を反転。文字の質感は保持） */
 .brand .brand-logo {
-  height: 34px;
+  height: 30px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
+  filter: invert(1);
 }
 
-@media (max-width: 600px) {
-  .brand .brand-logo {
-    height: 30px;
-  }
+.brand .brand-name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-strong);
 }
 
 /* ---------- iOS純正風 セグメントタブ ---------- */
