@@ -62,12 +62,10 @@ body {
   line-height: 1;
 }
 
-/* ロゴ画像（黒地で見えるよう色を反転。文字の質感は保持） */
 .brand .brand-logo {
   height: 30px;
   width: auto;
   display: block;
-  filter: invert(1);
 }
 
 .brand .brand-name {
