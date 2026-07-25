@@ -14,6 +14,7 @@
       <span>ゲンチカンセン</span>
     </a>
     <nav class="tabs" role="tablist" aria-label="規約とポリシー">
+      <span class="tab-thumb" aria-hidden="true"></span>
       <button class="tab" role="tab" data-tab="terms" aria-selected="true" aria-controls="terms">利用規約</button>
       <button class="tab" role="tab" data-tab="privacy" aria-selected="false" aria-controls="privacy">プライバシー</button>
       <button class="tab" role="tab" data-tab="tokushoho" aria-selected="false" aria-controls="tokushoho">特商法表記</button>
@@ -291,6 +292,16 @@
         tokushoho: '特定商取引法に基づく表記',
       };
       const tabButtons = Array.from(document.querySelectorAll('.tab'));
+      const thumb = document.querySelector('.tab-thumb');
+
+      function positionThumb() {
+        const active = tabButtons.find(function (b) {
+          return b.getAttribute('aria-selected') === 'true';
+        });
+        if (!active || !thumb) return;
+        thumb.style.width = active.offsetWidth + 'px';
+        thumb.style.transform = 'translateX(' + active.offsetLeft + 'px)';
+      }
 
       function activate(name, push) {
         if (!docs[name]) name = 'terms';
@@ -300,6 +311,7 @@
         tabButtons.forEach(function (btn) {
           btn.setAttribute('aria-selected', btn.dataset.tab === name ? 'true' : 'false');
         });
+        positionThumb();
         document.title = (titles[name] || '利用規約') + '｜ゲンチカンセン';
         if (push) {
           const url = '?tab=' + name;
@@ -324,7 +336,20 @@
         return params.get('tab') || 'terms';
       }
 
+      window.addEventListener('resize', function () {
+        thumb.style.transition = 'none';
+        positionThumb();
+        requestAnimationFrame(function () {
+          thumb.style.transition = '';
+        });
+      });
+
+      // 初回はアニメーションなしで配置
+      thumb.style.transition = 'none';
       activate(getTabFromUrl(), false);
+      requestAnimationFrame(function () {
+        thumb.style.transition = '';
+      });
     })();
   </script>
 </body>
