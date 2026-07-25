@@ -62,11 +62,18 @@ body {
   line-height: 1;
 }
 
-/* ロゴ画像を使う場合 */
+/* ロゴ画像（黒地に合わせて白のシルエットに変換） */
 .brand .brand-logo {
-  height: 26px;
+  height: 34px;
   width: auto;
   display: block;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 600px) {
+  .brand .brand-logo {
+    height: 30px;
+  }
 }
 
 /* ---------- iOS純正風 セグメントタブ ---------- */
