@@ -232,7 +232,6 @@ main {
 /* ---------- 特商法 表記テーブル ---------- */
 .tokusho {
   margin: 0;
-  border-top: 1px solid var(--line);
 }
 
 .tokusho > div {
