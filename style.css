@@ -74,15 +74,15 @@ body {
   position: relative;
   display: inline-flex;
   background: var(--seg-track);
-  border-radius: 9px;
-  padding: 2px;
+  border-radius: 11px;
+  padding: 4px;
 }
 
 /* スライドする白いつまみ */
 .tab-thumb {
   position: absolute;
-  top: 2px;
-  bottom: 2px;
+  top: 4px;
+  bottom: 4px;
   left: 0;
   width: 0;
   border-radius: 7px;
