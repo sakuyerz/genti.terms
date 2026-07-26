@@ -163,7 +163,6 @@ main {
   color: var(--text-body);
   font-size: 14px;
   margin: 0 0 48px;
-  text-align: justify;
 }
 
 .doc h2 {
@@ -188,7 +187,6 @@ main {
 .doc p {
   color: var(--text-body);
   margin: 0 0 16px;
-  text-align: justify;
 }
 
 .doc ul,
@@ -200,7 +198,6 @@ main {
 
 .doc li {
   margin: 0 0 8px;
-  text-align: justify;
 }
 
 .doc a {
