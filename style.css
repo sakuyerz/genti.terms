@@ -277,14 +277,24 @@ main {
 }
 
 .site-footer .appstore {
-  display: inline-flex;
-  line-height: 0;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
+  color: var(--text);
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.site-footer .appstore .arrow {
+  color: var(--text-faint);
+  font-size: 12px;
 }
 
 .site-footer .appstore:hover {
-  opacity: 1;
+  color: var(--text-strong);
+}
+
+.site-footer .appstore:hover .arrow {
+  color: var(--text);
 }
 
 /* ---------- Responsive ---------- */
